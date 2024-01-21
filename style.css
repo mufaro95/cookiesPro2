@@ -1,0 +1,38 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #a299b7fb;
+}
+
+
+#cookieButton {
+    font-size: 250px;
+    padding: 20px 40px;
+    margin: 10px;
+    cursor: pointer;
+    color: rgb(182, 115, 27);
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+.shop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    font-size: 1.4em;
+    border-bottom: 1px solid #333
+}
+
+
+#cookieCount {
+    font-size: 30px;
+}
+
+#upgradeButton {
+    margin-top: 20px;
+}

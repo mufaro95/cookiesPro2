@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cookie Clicker</title>
+</head>
+<body>
+
+    <button class="cookie" id="cookieButton">
+      🍪
+    </button>
+
+    <p id="cookieCount">Cookies: 0</p>
+    
+    <table>
+      <tr>
+        <th>Item</th>
+        <th>Price</th>
+        <th>    
+          Shop
+        </th>
+      </tr>
+      <tr>
+        <td>Candy</td>
+        <td>£10</td>
+        <td>    
+          <button id="upgradeButton">Purchase</button>
+        </td>
+      </tr>      
+      <tr>
+        <td>Novel</td>
+        <td>£20</td>
+        <td>    
+          <button id="upgradeButton20">Purchase</button>
+        </td>
+      </tr>
+      <tr>
+        <td>Swimming Voucher</td>
+        <td>£30</td>
+        <td>    
+          <button id="upgradeButton30">Purchase</button>
+        </td>
+      </tr>
+    </table>
+    <script>
+let cookies = 0;
+
+setInterval(function () {
+  cookies = cookies + 1;
+  console.log("🍪", cookies);
+  setCookies();
+
+}, 1000);
+
+
+
+        let cookiesPerClick = 1;
+        let cookiesPerSecond = 0;
+
+        cookieButton.addEventListener('click', () => {
+            cookies += cookiesPerClick;
+            updateCookieCount();
+        });
+
+        upgradeButton.addEventListener('click', () => {
+            if (cookies >= 10 ) {
+                cookies -= 10 ;
+                updateCookieCount();
+            } else {
+                alert("Not enough cookies to Purchase!");
+            }
+        });
+
+        //20
+        upgradeButton20.addEventListener('click', () => {
+            if (cookies >= 20 ) {
+                cookies -= 20;
+                updateCookieCount();
+            } else {
+                alert("Not enough cookies to Purchase!");
+            }
+        });
+
+        //30
+        upgradeButton30.addEventListener('click', () => {
+            if (cookies >= 30 ) {
+                cookies -= 30;
+                updateCookieCount();
+            } else {
+                alert("Not enough cookies to Purchase!");
+            }
+        });
+
+        setInterval(() => {
+            cookies += cookiesPerSecond;
+            updateCookieCount();
+        }, 1000);
+
+        function updateCookieCount() {
+            cookieCount.textContent = `Cookies: ${cookies}`;
+        }
+
+        //function setCookies() {
+           // localStorage.setItem("cookies", cookies)
+            //console.log("cookies", cookies)
+        //}
+        
+        //function Cookies() {
+  //if (localStorage.clickcount) {
+    //localStorage.clickcount = Number(localStorage.clickcount)+1;
+  //} else {
+   // localStorage.clickcount = 1;
+  //}
+  //document.getElementById("cookieCount").innerHTML = localStorage.clickcount;
+//}
+
+</script>
+</body>
+</html>
